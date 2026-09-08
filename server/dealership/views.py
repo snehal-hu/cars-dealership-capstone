@@ -11,9 +11,19 @@ from .models import Dealer, Review
 @csrf_exempt
 def register(request):
     if request.method != "POST":
-        return JsonResponse({"error": "POST required"}, status=405)
+        return JsonResponse(
+            {"error": "POST required"},
+            status=405
+        )
 
-    data = json.loads(request.body)
+    try:
+        data = json.loads(request.body)
+    except json.JSONDecodeError:
+        return JsonResponse(
+            {"error": "Invalid JSON"},
+            status=400
+        )
+
     username = data.get("username")
     password = data.get("password")
 
@@ -43,9 +53,19 @@ def register(request):
 @csrf_exempt
 def loginuser(request):
     if request.method != "POST":
-        return JsonResponse({"error": "POST required"}, status=405)
+        return JsonResponse(
+            {"error": "POST required"},
+            status=405
+        )
 
-    data = json.loads(request.body)
+    try:
+        data = json.loads(request.body)
+    except json.JSONDecodeError:
+        return JsonResponse(
+            {"error": "Invalid JSON"},
+            status=400
+        )
+
     username = data.get("username")
     password = data.get("password")
 
@@ -300,3 +320,10 @@ def getallcarmakes(request):
         car_makes,
         safe=False
     )
+
+
+def analyze_review_get(request, review):
+    return JsonResponse({
+        "review": review,
+        "sentiment": analyze_sentiment(review)
+    })
