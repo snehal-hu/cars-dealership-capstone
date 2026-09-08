@@ -1,18 +1,27 @@
 import React, { useState } from "react";
 
 const Register = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  const [formData, setFormData] = useState({
+    username: "",
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+  });
+
   const [message, setMessage] = useState("");
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
 
   const handleRegister = async (event) => {
     event.preventDefault();
-
-    if (password !== confirmPassword) {
-      setMessage("Passwords do not match.");
-      return;
-    }
 
     try {
       const response = await fetch(
@@ -22,10 +31,7 @@ const Register = () => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({
-            username: username,
-            password: password,
-          }),
+          body: JSON.stringify(formData),
         }
       );
 
@@ -43,15 +49,49 @@ const Register = () => {
 
   return (
     <div className="register-container">
-      <h2>Register</h2>
+      <h2>Sign-up</h2>
 
       <form onSubmit={handleRegister}>
         <div>
           <label>Username</label>
           <input
             type="text"
-            value={username}
-            onChange={(event) => setUsername(event.target.value)}
+            name="username"
+            value={formData.username}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <div>
+          <label>First Name</label>
+          <input
+            type="text"
+            name="firstName"
+            value={formData.firstName}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <div>
+          <label>Last Name</label>
+          <input
+            type="text"
+            name="lastName"
+            value={formData.lastName}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <div>
+          <label>Email</label>
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
             required
           />
         </div>
@@ -60,18 +100,9 @@ const Register = () => {
           <label>Password</label>
           <input
             type="password"
-            value={password}
-            onChange={(event) => setPassword(event.target.value)}
-            required
-          />
-        </div>
-
-        <div>
-          <label>Confirm Password</label>
-          <input
-            type="password"
-            value={confirmPassword}
-            onChange={(event) => setConfirmPassword(event.target.value)}
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
             required
           />
         </div>
