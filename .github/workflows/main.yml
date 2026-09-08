@@ -1,3 +1,4 @@
+```yaml
 name: CI/CD
 
 on:
@@ -34,3 +35,4 @@ jobs:
 
       - name: CI/CD workflow completed
         run: echo "CI/CD workflow completed successfully"
+```
