@@ -1,52 +1,217 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Best Cars</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 40px;
-            background: #f5f5f5;
-        }
 
-        .container {
-            max-width: 900px;
-            margin: auto;
-            background: white;
-            padding: 40px;
-            border-radius: 10px;
-        }
+```
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 
-        h1 {
-            text-align: center;
-        }
+<!-- Project CSS -->
+<link rel="stylesheet" href="css/style.css">
 
-        p {
-            line-height: 1.7;
-        }
-    </style>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f5f5f5;
+        margin: 0;
+    }
+
+    .hero {
+        padding: 50px 20px;
+        text-align: center;
+        background: #212529;
+        color: white;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+        font-weight: bold;
+    }
+
+    .about-section {
+        padding: 40px 20px;
+    }
+
+    .team-card {
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+        height: 100%;
+    }
+
+    .team-card img {
+        width: 100%;
+        height: 230px;
+        object-fit: cover;
+    }
+
+    .team-card .content {
+        padding: 20px;
+    }
+
+    .team-card h3 {
+        margin-bottom: 5px;
+    }
+
+    .role {
+        font-weight: bold;
+        color: #555;
+    }
+
+    .email {
+        color: #0d6efd;
+        word-break: break-word;
+    }
+</style>
+```
+
 </head>
+
 <body>
+
+<!-- Navigation Bar -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">Best Cars</a>
+
+```
+    <button class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="About.html">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Contact.html">Contact Us</a>
+            </li>
+        </ul>
+    </div>
+</div>
+```
+
+</nav>
+
+<!-- Hero Section -->
+
+<section class="hero">
+    <h1>About Best Cars</h1>
+    <p>
+        Your trusted platform for discovering quality cars
+        and connecting with reliable dealerships.
+    </p>
+</section>
+
+<!-- About Section -->
+
+<section class="about-section">
     <div class="container">
-        <h1>About Best Cars</h1>
 
+```
+    <div class="text-center mb-5">
+        <h2>Who We Are</h2>
         <p>
-            Welcome to Best Cars, your trusted platform for finding
-            quality cars and connecting with reliable dealers.
-        </p>
-
-        <p>
-            Our platform allows users to explore car makes, find dealers
-            by location, view dealer information, and submit reviews.
-        </p>
-
-        <p>
-            We are committed to providing a simple and convenient
-            car-buying experience for our customers.
+            Best Cars is a car dealership platform that helps customers
+            explore vehicle makes and models, find dealerships by state,
+            view dealer information, and share their experiences through
+            reviews.
         </p>
     </div>
+
+    <h2 class="text-center mb-4">Our Team</h2>
+
+    <div class="row g-4">
+
+        <!-- Team Member 1 -->
+        <div class="col-md-4">
+            <div class="team-card">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80"
+                     alt="Alex Johnson">
+                <div class="content">
+                    <h3>Alex Johnson</h3>
+                    <p class="role">Project Manager</p>
+                    <p>
+                        Alex manages project planning and coordinates
+                        the development team to deliver a reliable
+                        dealership platform.
+                    </p>
+                    <p class="email">
+                        Email: alex.johnson@bestcars.com
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Member 2 -->
+        <div class="col-md-4">
+            <div class="team-card">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80"
+                     alt="Emily Davis">
+                <div class="content">
+                    <h3>Emily Davis</h3>
+                    <p class="role">Frontend Developer</p>
+                    <p>
+                        Emily develops responsive user interfaces and
+                        ensures customers can easily navigate the
+                        Best Cars application.
+                    </p>
+                    <p class="email">
+                        Email: emily.davis@bestcars.com
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Member 3 -->
+        <div class="col-md-4">
+            <div class="team-card">
+                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=800&q=80"
+                     alt="Michael Brown">
+                <div class="content">
+                    <h3>Michael Brown</h3>
+                    <p class="role">Backend Developer</p>
+                    <p>
+                        Michael works on Django APIs, database
+                        integration, authentication, dealer data,
+                        and review functionality.
+                    </p>
+                    <p class="email">
+                        Email: michael.brown@bestcars.com
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+```
+
+</section>
+
+<!-- Footer -->
+
+<footer class="bg-dark text-white text-center p-3">
+    <p class="mb-0">
+        &copy; 2026 Best Cars. All Rights Reserved.
+    </p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
