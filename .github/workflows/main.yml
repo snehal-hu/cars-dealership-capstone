@@ -1,19 +1,12 @@
 
-```yaml
-name: CI/CD
-
-on:
-  push:
-    branches: [main]
+name: CI-CD
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: CI/CD successful
+      - name: Success
         run: echo "CI/CD workflow completed successfully"
-```
