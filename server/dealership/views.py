@@ -94,7 +94,8 @@ def logoutuser(request):
     logout(request)
 
     return JsonResponse({
-        "message": "Logout successful"
+        "message": "Logout successful",
+        "userName": ""
     })
 
 
