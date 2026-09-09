@@ -1,0 +1,3 @@
+curl -X GET http://127.0.0.1:8000/djangoapp/getalldealers
+
+[{"id": 1, "name": "Kansas City Motors", "address": "123 Main Street", "city": "Kansas City", "state": "Kansas", "zip_code": "66101", "full_name": "Kansas City Motors", "st": "KS"}, {"id": 2, "name": "Sunrise Auto Center", "address": "456 Oak Avenue", "city": "Dallas", "state": "Texas", "zip_code": "75201", "full_name": "Sunrise Auto Center", "st": "TX"}, {"id": 3, "name": "Chicago Auto Group", "address": "789 Lake Street", "city": "Chicago", "state": "Illinois", "zip_code": "60601", "full_name": "Chicago Auto Group", "st": "IL"}]
