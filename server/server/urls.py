@@ -1,8 +1,11 @@
 from django.contrib import admin
 from django.urls import path
+from django.views.generic import TemplateView
 from dealership import views
 
 urlpatterns = [
+    path('', TemplateView.as_view(template_name='About.html'), name='home'),
+
     path('admin/', admin.site.urls),
 
     # Existing authentication routes
@@ -29,4 +32,16 @@ urlpatterns = [
     path('fetchDealers/<str:state>', views.getdealersbyState, name='fetchDealersByState'),
     path('fetchReviews/dealer/<int:dealer_id>', views.getdealerreviews, name='fetchReviewsDealer'),
     path('analyze/<str:review>', views.analyze_review_get, name='analyze'),
+
+    # Frontend pages
+    path(
+        'About.html',
+        TemplateView.as_view(template_name='About.html'),
+        name='about'
+    ),
+    path(
+        'Contact.html',
+        TemplateView.as_view(template_name='Contact.html'),
+        name='contact'
+    ),
 ]
