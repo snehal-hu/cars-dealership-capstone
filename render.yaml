@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: cars-dealership-capstone
+    runtime: python
+    rootDir: server
+    buildCommand: ./build.sh
+    startCommand: gunicorn server.wsgi:application
