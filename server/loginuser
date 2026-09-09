@@ -1,0 +1,5 @@
+cURL command:
+curl -X POST http://127.0.0.1:8000/djangoapp/loginuser -H "Content-Type: application/json" -d "{"username":"curltest2026","password":"Test@12345"}"
+
+Output:
+{"message": "Login successful", "username": "curltest2026"}
