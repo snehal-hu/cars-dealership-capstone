@@ -1,0 +1,5 @@
+cURL command:
+curl -b cookies.txt -X GET http://127.0.0.1:8000/djangoapp/getdealerreviews/1
+
+Output:
+[{"id": 1, "dealer": 1, "user": "snehal", "review": "Fantastic services", "sentiment": "positive", "created_at": "2026-09-08T09:22:33.858Z"}]
