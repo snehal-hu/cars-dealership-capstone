@@ -1,0 +1,3 @@
+curl -X GET "http://127.0.0.1:8000/djangoapp/getdealersbyState/Kansas"
+
+[{"id": 1, "name": "Kansas City Motors", "address": "123 Main Street", "city": "Kansas City", "state": "Kansas", "zip_code": "66101", "full_name": "Kansas City Motors", "st": "KS"}]
